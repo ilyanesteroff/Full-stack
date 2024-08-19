@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-//Just for dev mode
+//Just for dev mode :)
 process.env.ADMIN_KEY = 'key'
 
-const interval = 5 * 60 * 1000;
+const interval = 24 * 60 * 60 * 1000;
 
 const sendPostRequest = async () => {
   try {
