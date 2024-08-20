@@ -5,7 +5,7 @@ process.env.ADMIN_KEY = 'key'
 
 const interval = 24 * 60 * 60 * 1000;
 
-const sendPostRequest = async () => {
+const dailyJob = async () => {
   try {
     const method = 'POST'
     const url = 'http://localhost:8000/api/schedule/trigger/daily';
@@ -19,5 +19,4 @@ const sendPostRequest = async () => {
   }
 };
 
-sendPostRequest();
-setInterval(sendPostRequest, interval);
+setInterval(dailyJob, interval);
