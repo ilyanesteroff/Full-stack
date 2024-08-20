@@ -27,7 +27,13 @@ class Polygon extends API
       $url = $this->constructURL($date);
       $res = Http::get($url);
 
-      return $res->successful() ? $res->json('results') : [];
+      if ($res->successful()) {
+        $results = $res->json('results');
+        if ($results)
+          return $results;
+      }
+
+      return [];
     } catch (\Exception $e) {
       return [];
     }

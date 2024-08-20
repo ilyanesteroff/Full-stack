@@ -8,7 +8,7 @@ use Ramsey\Uuid\Uuid;
 
 class Manager
 {
-  private $range = [1, 2, 3];
+  private $range = [1, 2, 3, 4];
   private $model;
 
   public function __construct()
@@ -22,7 +22,7 @@ class Manager
     $version = Uuid::uuid4()->toString();
 
     foreach ($this->range as $day) {
-      $date = Carbon::now()->subDays($day + 2)->toDateString();
+      $date = Carbon::now()->subDays($day + 1)->toDateString();
       $rates = $this->model->gatherForSpecificDate($date, $version);
       $output = array_merge($output, $rates);
     }
